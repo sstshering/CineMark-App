@@ -1,0 +1,549 @@
+body {
+    font-family: 'Cairo', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: white;
+    background-color: #0d0e27;
+    background-image: linear-gradient(#121342 , #050115 90%);
+}
+
+.footer {
+    background-color: #050115;
+    text-align: center;
+    color: white;
+    height: 100px;
+}
+
+.carousel { 
+    width:60%; 
+    margin-left: 20%;
+    margin-top: 2%;
+}
+
+.carousel-inner > .carousel-item > img { 
+    height:500px;
+}
+
+
+.logo img {
+    height: auto; /* Keeps the aspect ratio */
+    width: 150px; /* Example size, adjust as needed */
+    vertical-align: middle; /* Aligns the image nicely in the header */
+}
+
+.logo {
+    font-size: 2rem;
+    text-transform: uppercase;
+    color: #F0FFFF;
+}
+
+.nav {
+    display: flex;
+    list-style-type: none;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+}
+
+.nav a {
+    color: #F0FFFF;
+    text-decoration: none;
+    margin-right: 1rem;
+}
+
+input[type=text] {
+    width: 130px;
+    transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+    width: 100%;
+}
+
+/* Slideshow container */
+.slideshow-container {
+    max-width: 100%;
+    position: relative;
+    margin: 0 auto;
+}
+
+.mySlides {
+    display: none;
+}
+
+.fade {
+    animation: fade 1.5s;
+}
+
+@keyframes fade {
+    from { opacity: .4; }
+    to { opacity: 1; }
+}
+
+/* Styles for movie information */
+.text-container {
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+}
+
+.movie-info {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.view-details {
+    background-color: #f44336;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #717171;
+}
+
+.image-container {
+    width: auto;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: 30%;
+}
+
+/* Movie sections */
+.section {
+    margin-bottom: 20px;
+}
+
+.section-title {
+    background-color: #2980b9;
+    /* shape-outside: polygon(75% 0, 70% 50%, 75% 100%, 25% 100%, 30% 50%, 25% 0%);
+    shape-margin: 20px;
+    clip-path: polygon(75% 0, 70% 50%, 75% 100%, 25% 100%, 30% 50%, 25% 0%); */
+    text-align: center;
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-bottom: 20px;
+    height: 60px;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.movies-container {
+    display: flex;
+    overflow-x: auto + 10px;
+    overflow: hidden;
+}
+
+.movie {
+    flex: 0 0 calc(30% - 20px); /* Adjust the width as per your requirement */
+    margin-right: auto;
+    margin-left: 25px;
+    overflow: hidden;
+}
+
+.movie img {
+    height: auto;
+    width: 450px;
+    margin-left: 0px;
+    margin-top: 0px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.movie:hover{
+    box-shadow: 0 0 5px 5px rgba(0, 140, 186, 0.5);
+}
+
+.form-section {
+    font-family: Arial, sans-serif;
+    display: flex; /* Use flexbox for centering */
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    width: 80%; /* Adjust the width as needed */
+    max-width: 800px; /* Maximum width for larger screens */
+    margin: auto; /* Center the form */
+    padding: 100px; /* Add some padding for spacing */
+    border-radius: 10px; /* Add some rounded corners */
+    background-color: rgba(255, 255, 255, 0.654);/* Add a semi-transparent white background */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add a subtle shadow */
+    margin-top: 120px; /*Adjust the top margin for spacing */
+    margin-right: 10%; /* Align to the right */
+    position: relative;
+}
+
+.form-section h3 {
+    text-align: center; /* Center the heading */
+    color: #333; /* Set the heading color */
+    margin-bottom: 30px; /* Add some space below the heading */
+} 
+
+.form-section label {
+    margin-top: 10px;
+    display: block;
+    color: #333; /* Set the label color */
+}
+
+.form-section input[type="text"],
+.form-section input[type="email"],
+.form-section input[type="password"] {
+    width: 100%; /* Make the input fields fill the container */
+    max-width: 300px; /* Maximum width for larger screens */
+    padding:10px; /* Add some padding */
+    margin-bottom: 20px; /* Add some space between fields */
+    border: 1px solid #ccc; /* Add a border */
+    border-radius: 5px; /* Add some rounded corners */
+    box-sizing: border-box; /* Ensure the padding and border are included in the width */
+}
+
+.form-section input[type="submit"] {
+    width: 100%; /* Make the submit button fill the container */
+    max-width: 300px; /* Maximum width for larger screens */
+    padding: 15px; /* Add some padding */
+    background-color: crimson; /* Set the background color */
+    color: #fff; /* Set the text color */
+    border: none; /* Remove the border */
+    border-radius: 5px; /* Add some rounded corners */
+    cursor: pointer; /* Add a pointer cursor */
+}
+
+.form-section input[type="submit"]:hover {
+    background-color: crimson; /* Change the background color on hover */
+}
+
+/* Define custom properties for button colors */
+:root {
+    --button-outline-color: crimson !important; /*  outline color */
+    --button-fill-color: Transparent!important; /* Transparent fill color */
+    --button-text-color: #fff !important; /*  text color */
+    --button-hover-fill-color: crimson !important; /*  fill color on hover */
+    --button-hover-text-color: #fff !important; /* White text color on hover */
+}
+
+.pen-button {
+    border: 2px solid var(--button-outline-color) !important;
+    background-color: var(--button-fill-color) !important; 
+    color: var(--button-text-color) !important; 
+    padding: 5px 10px; /* Padding */
+    border-radius: 5px; /* Border radius */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+    margin-left: 10px; /* Add space between the membership type and the pen button */
+
+}
+
+.pen-button:hover,
+.pen-button:focus {
+    background-color: var(--button-hover-fill-color) !important; 
+    color: var(--button-hover-text-color) !important; 
+} 
+
+.modal-content {
+    width: 90%; /* Set the width of the modal content */
+    max-width: 900px; /* Maximum width for larger screens */
+    border-radius: 20px; /* Add rounded corners */
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3); /* Add shadow */
+    padding: 20px; /* Add padding */
+}
+
+.modal-body p {
+    font-size: 20px; /* Increase the font size of paragraphs in the modal body */
+}
+.main-banner {
+    margin: 0 auto;
+    width: 1300px;
+    height: 48px;
+    background-color: #FFD700;
+    overflow: hidden;
+    position: relative;
+}
+
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table, th, td {
+    color: white;
+}
+
+.btn-primary {
+    background-color: white !important;
+    color: #1f1f33 !important;
+    border: none !important;
+}
+
+.btn-primary:hover {
+    background-color: #ddd !important;
+}
+
+.black-bg {
+    background-color: #1f1f33;
+    padding: 20px;
+}
+
+.manager-section {
+    text-align: center; /* Center the content horizontally */
+    padding: 8px 0; /* Add padding to top and bottom */
+}
+
+.manager-section .section-title {
+    color: #fff;
+    font-size: 2em; /* Adjust the font size as needed */
+    margin: 0; /* Remove any default margin */
+}.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table, th, td {
+    color: white;
+}
+
+.btn-primary {
+    background-color: white !important;
+    color: #1f1f33 !important;
+    border: none !important;
+}
+
+.btn-primary:hover {
+    background-color: #ddd !important;
+}
+
+.black-bg {
+    background-color: #1f1f33;
+    padding: 20px;
+}
+
+.manager-section {
+    text-align: center; /* Center the content horizontally */
+    padding: 8px 0; /* Add padding to top and bottom */
+}
+
+.manager-section .section-title {
+    font-family: Arial, sans-serif;
+    color: #fff;
+    font-size: 2em; /* Adjust the font size as needed */
+    margin: 0; /* Remove any default margin */
+}
+
+.centered-section {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    max-width: 800px;
+    margin: auto;
+    padding: 40px;
+    border-radius: 10px;
+    background-color: rgba(13, 14, 39, 0.9); /* Slightly transparent background */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4); /* Subtle shadow */
+    margin-top: 20px;
+    color: white;
+}
+
+.centered-section button {
+    margin-bottom: 20px; /* Add margin between buttons */
+}
+
+.centered-section form {
+    width: 100%; /* Ensuring form takes full width */
+}
+
+.centered-section h3 {
+    margin-bottom: 20px;
+    color: #fff; /* Setting color for consistency */
+}
+
+.centered-section label {
+    color: #ddd; /* Lighter color for labels */
+}
+
+.centered-section input[type="text"],
+.centered-section select {
+    width: calc(100% - 20px); /* Making room for padding */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #777; /* Darker border */
+    border-radius: 5px;
+    background-color: #fff; /* White background for inputs */
+    color: #333; /* Darker text color */
+}
+
+.centered-section input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.centered-section input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+
+
+.row-container {
+    column-count: 6;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-bottom: 2%;
+}
+
+.card-container {
+    background-color: #383838;
+    overflow: hidden;
+    border-radius: 5px;
+    padding: 2%;
+}
+
+.card-container:hover ~ .card-info-container {
+    height: 120px;
+    margin-top: -120px;
+}
+
+.card-info-container {
+    background-image: linear-gradient(#383838 , #202020 95%);
+    text-shadow: 2px 2px #0d0e27;
+    display: flexbox;
+    overflow: hidden;
+    text-align: center;
+    opacity: .95;
+    transition: all .5s ease;
+    height: 35px;
+    margin-top: -35px;
+    position: relative;
+}
+
+.card-info-container:hover {
+    height: 120px;
+    margin-top: -120px;
+}
+
+.card-subinfo-container {
+    background-color: #1a1a1a;
+    text-shadow: 2px 2px #0d0e27;
+    overflow: hidden;
+    text-indent: 120px;
+    margin-top: 1%;
+    margin-left: -50%;
+    margin-right: 20%;
+    transform: skew(-20deg);
+    color: #fffffffa;
+    font-size: 20px;
+    height: 30px;
+}
+
+.card-img-top {
+    align-self: flex-start;
+    height: 350px;
+}
+
+.row-container {
+    column-count: 6;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-bottom: 2%;
+}
+
+.card-container {
+    background-color: #383838;
+    overflow: hidden;
+    border-radius: 5px;
+    padding: 2%;
+}
+
+.card-container:hover ~ .card-info-container {
+    height: 120px;
+    margin-top: -120px;
+}
+
+.card-info-container {
+    background-image: linear-gradient(#383838 , #202020 95%);
+    text-shadow: 2px 2px #0d0e27;
+    display: flexbox;
+    overflow: hidden;
+    text-align: center;
+    opacity: .95;
+    transition: all .5s ease;
+    height: 35px;
+    margin-top: -35px;
+    position: relative;
+}
+
+.card-info-container:hover {
+    height: 120px;
+    margin-top: -120px;
+}
+
+.card-subinfo-container {
+    background-color: #1a1a1a;
+    text-shadow: 2px 2px #0d0e27;
+    overflow: hidden;
+    text-indent: 120px;
+    margin-top: 1%;
+    margin-left: -50%;
+    margin-right: 20%;
+    transform: skew(-20deg);
+    color: #fffffffa;
+    font-size: 20px;
+    height: 30px;
+}
+
+.invoiceCard {
+    background-image: linear-gradient(#383838 , #202020 95%);
+    overflow: hidden;
+    opacity: .95;
+    border-radius: 5px;
+    margin-bottom: 2%;
+    padding: 2%;
+    height: 220px;
+}
+
+.invoiceCard-info {
+    color: white;
+    margin-left: 15%;
+}

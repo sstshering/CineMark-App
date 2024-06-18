@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manager Page</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body style="background-color: #0d0e27;">
+    <div id="navbarContainer"></div>
+
+    <!-- <div class = "title">
+        <h1>Manager Page</h1>
+    </div> -->
+
+    <div class="section manager-section">
+        <div class="section-title" style="color: #fff">Manager Page</div>
+        <!-- <div id="moviesCardDeckContainer"></div> -->
+    </div>
+
+    <div class="centered-section">
+        <form id="setMovie">
+            <h3>Add a Movie </h3>
+            <label for="movieName">Movie Name:</label>
+            <input type="text" id="movieName">
+            <br>
+            <label for="movieGenre">Movie Genre:</label>
+            <select name="movieGenre" id="movieGenre">
+                <option value="" selected disabled>Choose genre</option>
+                <option value="horror">Horror</option>
+                <option value="anime">Anime</option>
+                <option value="action">Action</option>
+                <option value="romance">Romance</option>
+                <option value="comedy">Comedy</option>
+            </select>
+            <br>
+            <label for="movieDescription">Movie Description:</label>
+            <input type="text" id="movieDescription">
+            <br>
+            <label for="movieRuntime">Movie Runtime:</label>
+            <input type="text" id="movieRuntime">
+            <br>
+            <label for="movieRating">Movie Rating:</label>
+            <input type="text" id="movieRating">
+            <br>
+            <label for="movieReview">Movie Review:</label>
+            <input type="text" id="movieReview">
+            <br>
+            <label for="ticketPrice">Ticket Price:</label>
+            <input type="text" id="ticketPrice">
+            <br>
+            <label for="id">ID:</label>
+            <input type="text" id="id">
+            <br>
+            <label for = "movieImage">Movie Image</label>
+            <!-- <input 
+                type = "file" 
+                id="movieImage"
+                accept = "image/png, image/jpeg"
+            /> -->
+            <input type="file" id="movieImage">
+            <br>
+            <input style= "margin-top: 20px;" type="submit" value="Submit">
+        </form>
+        
+    </div>
+
+</body>
+
+<script src="navbar.bundle.js"></script>
+<script src="index.bundle.js"></script>
+<script src="auth.bundle.js"></script>
+<script src="mngr_index.bundle.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+
+</html>

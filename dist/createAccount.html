@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Create Account</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            background-image: url('images/ca.jpg'); 
+            background-size: cover; 
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed; 
+        }
+    </style>
+</head>
+
+<body style="background-color: #0d0e27;">
+    <div id="navbarContainer"></div>
+
+    <div class="container-fluid"> 
+        <div class="form-section">
+            <form id="createAccount">
+                <h3>Create Account</h3>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" /><br />
+                <label for="createEmail">Email:</label>
+                <input type="text" id="createEmail" name="email" /><br />
+                <label for="createPassword">Password:</label>
+                <input type="password" id="createPassword" name="password" /><br />
+
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob"></br>
+
+                <label class="mr-sm-2" style="margin-top: 25px;" for="inlineFormCustomSelect">Membership Type:</label>
+                <select id="membership" class="custom-select mr-sm-2" required>
+                    <option selected>Choose...</option>
+                    <option id= "Popcorn Pass" value="Popcorn Pass">Popcorn Pass (Free)</option>
+                    <!-- <option id="Silver Screen" value="Silver Screen">Silver Screen</option>
+                    <option id="Blockbuster VIP" value="Blockbuster VIP">Blockbuster VIP</option> -->
+                </select>
+
+                <div class="submit-button-container" style="margin-top: 25px;">
+                    <input id= submit type="submit" value="Create Account" />
+                </div>
+                <p>Have an Account? <a id="signInBtn" href="signIn.html" style="color:crimson">Sign In</a></p>
+            </form>
+        </div>  
+    </div>
+</body>
+
+<script src="index.bundle.js"></script>
+<script src="auth.bundle.js"></script>
+<script src="navbar.bundle.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+
+</html>

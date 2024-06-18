@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body style="background-color: #0d0e27;">
+    <div id="navbarContainer"></div>
+
+    <div class="section manager-section">
+        <div class="section-title" style="color: #fff">Manager Page</div>
+        <!-- <div id="moviesCardDeckContainer"></div> -->
+    </div>
+
+    <div class="form-section black-bg">
+        <form id="createManagerAccount">
+            <h3>Create Account</h3>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name"/><br/>
+            <label for="createEmail">Email:</label>
+            <input type="text" id="createEmail" name="email"/><br/>
+            <label for="createPassword">Password:</label>
+            <input type="password" id="createPassword" name="password"/><br/>
+            <input type="submit" value="Create Account"/>
+        </form> 
+    <br>
+
+        <form id="assignManager">
+            <h3>Create Employee Profile</h3>
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName"></br>
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName"></br>
+            <label for="email">Email:</label>
+            <input type="text" id="email"></br>
+            <label for="role">Role:</label>
+            <input type="text" id="role"></br> 
+            <label for="doh">Date of Hire:</label>
+            <input type="date" id="doh"></br>  
+           <input type="submit"> 
+        </form>
+    </div>
+
+</body>
+
+<script src="navbar.bundle.js"></script> <!-- Script to dynamically load the navbar -->
+<script src="index.bundle.js"></script>
+<script src="auth.bundle.js"></script>
+<script src="mngr_index.bundle.js"></script>
+<script src="createManager.bundle.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+
+</html>   

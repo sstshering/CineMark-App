@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    background: #0d0e27;
+    color: #FFFFFF;
+}
+
+header, nav, footer {
+    background-color: #022c43;
+    color: #ffffff;
+    text-align: center;
+    
+}
+
+
+
+h1, h2 {
+    color: #022c43;
+}
+
+section {
+    margin-bottom: 2em;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 20px;
+}
+
+/* Adjusts the width of the main image and centers it */
+section img {
+    max-width: 80%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+}
+
+/* Styles for the "About Cinewave" title within sections */
+section h2 {
+    text-align: center;
+    font-size: 2.5em; /* Larger font size for prominence */
+    color: #022c43; /* Matching the color scheme */
+    margin-top: 20px;
+}
+ 
+ul, dl {
+    margin-left: 20px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+footer {
+    font-size: 0.8em;
+}
+
+.membership-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px; /* Adjust the gap as needed */
+}
+
+.membership-tier {
+    flex: 1;
+    max-width: calc(33.333% - 20px); /* Adjust the max-width as needed */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px; /* Space between the image and description */
+}
+
+.membership-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-top-left-radius: 8px; /* Optional for rounded corners */
+    border-top-right-radius: 8px; /* Optional for rounded corners */
+}
+
+.membership-description {
+    padding: 15px;
+    background: #ffffff;
+    border-bottom-left-radius: 8px; /* Optional for rounded corners */
+    border-bottom-right-radius: 8px; /* Optional for rounded corners */
+}
+
+@media (max-width: 768px) {
+    .membership-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .membership-tier {
+        max-width: 100%;
+    }
+}
+
+.cinewave-image {
+    background: url('images/theater.jpg') center center no-repeat;
+    background-size: 100% auto; /* Adjust the percentage to make the image "smaller" */
+    position: relative;
+    width: 100%; /* Ensure it occupies the full width */
+    height: 500px; /* Adjust height as needed */
+    text-align: center;
+    color: white;
+}
+
+
+
+.cinewave-image h2 {
+    position: absolute;
+    bottom: 20px; /* Adjust as needed for spacing from the bottom */
+    right: 90px; /* Adjust as needed for spacing from the right */
+    font-size: 3em;
+    font-weight: bold;
+    color: #ffffff; /* Blue text color */
+    z-index: 3; /* Make sure this is above the background image */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for the text */
+    padding: 0.5em; /* Padding around the text */
+    border-radius: 4px; /* Rounded corners for the background */
+}
+
+.cinewave-image .cinewave-title-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.cinewave-image button {
+    position: relative;
+    z-index: 2;
+    background-color: #007bff; /* Bootstrap primary button color */
+    border: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+    font-size: 1em;
+    color: white;
+    text-transform: uppercase;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+.image-container {
+    display: flex;
+    overflow-x: auto; /* Add horizontal scroll if images exceed width */
+}
+
+.image-container img {
+    max-width: 100%; /* Ensure images don't exceed container width */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 10px; /* Adjust margin as needed */
+}
+
+

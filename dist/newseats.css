@@ -1,0 +1,65 @@
+/* General container styles for the seating area */
+
+  
+  .invoice-container {
+    perspective: 200px;
+    perspective-origin: top center;
+    margin-left: 30px;
+  }
+  
+
+  
+  /* Be aware that the percentage changes will adapt to screen sizes */
+  .receipt {
+    background-color: #fffffffa; 
+    border-style: solid; 
+    position: absolute;
+    /* Adjust the top and right values to align it to the right */
+    top: 500px;
+    right: 2.5vw; /* Adjust this value as needed */
+    width: 22%; /* Adjust the width as needed */
+    height: 75%; /* Adjust the height as needed */
+    padding-left: 10px;
+}
+  
+  .receiptStatic {
+    display: flexbox;
+    background-color: white;
+    border-style: solid;
+    width: 105%;
+    height: 95%;
+    padding-left: 10px;
+  }
+  
+  /* These classes are used to standardize how elements in the seat appear depending on labels, items, and prices */
+  .itemLabel {
+    font-weight: bold;
+    font-size: 15px;
+  }
+  
+  .item {
+    font-style: italic;
+    font-size: 14px;
+  }
+  
+  .price {
+    font-style: italic;
+    font-size: 14px;
+    margin-left: 80%;
+  }
+  
+  .inline {
+    display: inline-block;
+  }
+  
+  .center {
+    text-align: center;
+  }
+  
+  .noTop {
+    margin-top: 0px;
+  }
+  
+  .noBot {
+    margin-bottom: 0px;
+  }

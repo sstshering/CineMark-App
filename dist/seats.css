@@ -1,0 +1,206 @@
+/* General container styles for the seating area */
+.seating-container {
+  perspective: 200px;
+  position: relative;
+  perspective-origin: top center;
+  left: 2.5vw;
+  /* This will only move the seating area */
+}
+
+.invoice-container {
+  perspective: 200px;
+  perspective-origin: top center;
+  margin-left: 30px;
+}
+
+
+/* Row styles */
+.row {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+
+}
+
+/* Seat styles */
+.seat {
+  width: 40px;
+  /* Width of each seat */
+  height: 40px;
+  /* Height of each seat */
+  margin-right: 5px;
+  /* Space between seats */
+  border-radius: 5px;
+  /* Rounded corners for the seat */
+  background-color: #2af53e9c;
+  /* Seat color */
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.7);
+  /* Shadow to create the 3D effect */
+  cursor: pointer;
+  /* Cursor changes to pointer to indicate clickable seats */
+  /*transform: rotateX(-45deg); /* Rotate seats for visual effect */
+  transition: transform 0.3s;
+  /* Smooth transformation when selected */
+}
+
+/* Seat hover effect */
+.seat:hover {
+  /* transform: rotateX(-45deg) translateY(-10px); Lift the seat on hover */
+  transform: translateY(-5px);
+}
+
+/* Selected seat styles */
+.seat.selected {
+  background-color: #b9b8b8;
+  /* Change color for selected seats */
+}
+
+/* Unavailable seat styles */
+.seat.unavailable {
+  background-color: #383838;
+  /* Change color for unavailable seats */
+  cursor: not-allowed;
+  /* Change cursor to indicate seat can't be selected */
+}
+
+
+/* Curved line styles */
+.curved-line {
+  color: white; 
+  position: relative;
+  width: 1000px;
+  /* Adjust as needed */
+  height: 3px;
+  /* Adjust as needed */
+  background-color: white;
+  /* Curved line color */
+  margin-top: 30px;
+  margin-left: 22.5px;
+  /* Aligns to the left */
+  margin-right: auto;
+}
+
+/* Screen text styles */
+.screen-text {
+  color: white;
+  position: relative;
+  /* Relative positioning to move the text */
+  left: 485px;
+  /* Moves the text 50px to the left from its original position */
+  margin-top: 20px;
+  /* Keeps the top margin */
+  margin-bottom: 100px;
+  /* Keeps the bottom margin */
+}
+
+/* Additional styles for View Menu button */
+.view-menu-button {
+  padding: 10px 20px;
+  /* Gives some space around the text */
+  font-size: 16px;
+  /* Sets a readable font size */
+  color: white;
+  /* Text color is white */
+  background-color: #858585;
+  /* Bootstrap primary blue */
+  border: none;
+  /* No border */
+  border-radius: 5px;
+  /* Rounded corners */
+  cursor: pointer;
+  /* Changes cursor to indicate it's clickable */
+  transition: background-color 0.3s;
+  /* Smooth background color transition */
+  margin-top: 20px;
+  margin-left: 440px;
+}
+
+.view-menu-button:hover {
+  background-color: #0056b3;
+  /* A darker blue on hover */
+}
+
+/* Curved line styles */
+.curved-line {
+  position: relative;
+  width: 1000px;
+  /* Adjust as needed */
+  height: 3px;
+  /* Adjust as needed */
+  background-color: #000;
+  /* Curved line color */
+  margin: 50px auto;
+  /* Center horizontally */
+  margin-left: 22.5px;
+  /* Aligns to the left */
+  margin-right: auto;
+}
+
+/* Screen text styles */
+.screen-text {
+  position: relative;
+  /* Relative positioning to move the text */
+  left: 485px;
+  /* Moves the text 50px to the left from its original position */
+  margin-top: 20px;
+  /* Adjust as needed */
+  margin-bottom: 60px;
+  /* Add margin below the text */
+}
+
+/* Be aware that the percentage changes will adapt to screen sizes */
+.receipt {
+  display: flexbox;
+  background-color: #fffffffa;
+  border-style: solid;
+  position: fixed;
+  /* This makes the receipt a floating element */
+  top: 150px;
+  left: 75%;
+  width: 22%;
+  height: 75%;
+  padding-left: 10px;
+
+}
+
+.receiptStatic {
+  display: flexbox;
+  background-color: white;
+  border-style: solid;
+  width: 105%;
+  height: 95%;
+  padding-left: 10px;
+}
+
+/* These classes are used to standardize how elements in the seat appear depending on labels, items, and prices */
+.itemLabel {
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.item {
+  font-style: italic;
+  font-size: 14px;
+}
+
+.price {
+  font-style: italic;
+  font-size: 14px;
+  margin-left: 80%;
+}
+
+.inline {
+  display: inline-block;
+}
+
+.center {
+  text-align: center;
+}
+
+.noTop {
+  margin-top: 0px;
+}
+
+.noBot {
+  margin-bottom: 0px;
+}

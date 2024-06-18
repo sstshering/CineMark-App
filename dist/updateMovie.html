@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manager Page</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body style="background-color: #0d0e27;">
+    <div id="navbarContainer"></div>
+    
+    <div class="section manager-section">
+        <div class="section-title" style="color: #fff">Manager Page</div>
+            <!-- <div id="moviesCardDeckContainer"></div> -->
+    </div>
+
+    <div class= "centered-section">
+        <form id="updateShowtime" style="margin-bottom: 20px;">
+            <h3 style="text-align: center;">Update Showtimes </h3>
+            <label for="movie">Pick a Movie to Update:</label>
+            <select id="movie" required>
+            </select>
+            <br>
+            <label for="date">Pick a Date:</label>
+            <select id="date" required>
+
+            </select>
+            <br>
+            <label for="time">Pick a Time to Update:</label>
+            <select id="time" required>
+
+            </select>
+            <br>
+            <label for="updatedTime">What is the updated time:</label>
+            <input type="text" id="updatedTime" required>
+            <br>
+            <input style= "margin-top: 20px;" type="submit" value="Update Showtime">
+        </form>
+
+        <form id="deleteMovie">
+            <h3 style="margin-top: 40px;">Delete Movie</h3>
+            <label for="id">ID:</label>
+            <input id="id" required>
+            <br>
+            <input style= "margin-top: 20px;" type="submit" value="Remove Movie">
+        </form>
+        <br>
+        
+    </div>
+
+</body>
+
+<script src="navbar.bundle.js"></script>
+<!--<script src="index.bundle.js"></script> -->
+<script src="auth.bundle.js"></script>
+<script src="mngr_index.bundle.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+
+</html>

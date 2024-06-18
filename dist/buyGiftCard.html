@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Theater Menu</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="giftCards.css">
+</head>
+<body style="background-color: #0d0e27;">
+    <div id="navbarContainer">
+        <!-- Navigation Bar Content -->
+    </div>
+    
+    <!-- Gift Card Section -->
+    <div class="gift-card-section" style="display: flex; justify-content: center; align-items: start; height: 60vh; padding-top: 5vh;">
+        <div class="gift-card-container" style="background: #FFFFFF; padding: 4rem 2rem; border-radius: 5px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); width: 600px; margin: auto;">
+            <!-- Dynamic content container -->
+            <div id="dynamic-content">
+                <!-- Initial Gift Card Form -->
+                <div class="gift-card-form" id="gift-card-form" style="width: 100%; margin: auto; box-sizing: border-box;">
+                    <h2 style="margin-bottom: 1rem; text-align: center;">Who is the gift card for?</h2>
+                    <div class="btn-group" style="margin-bottom: 1.5rem; justify-content: center; display: flex;">
+                        <button type="button" id="btn-friend" class="btn btn-outline-secondary">A FRIEND</button>
+                        <button type="button" id="btn-for-me" class="btn btn-outline-secondary">FOR ME</button>
+                    </div>
+                    <label for="their-name" id="their-name-label" style="display: none; margin-bottom: .5rem;">Their name</label>
+                    <input type="text" id="their-name" class="form-control" style="display: none; margin-bottom: 1.5rem;">
+                    <label for="your-name" id="your-name-label" style="display: none; margin-bottom: .5rem;">Your name</label>
+                    <input type="text" id="your-name" class="form-control" style="display: none; margin-bottom: 1.5rem;">
+                    <button type="button" id="pick-card-button" class="btn btn-primary btn-block">Pick a gift card</button>
+                </div>
+            </div>
+        </div>
+    </div> 
+
+    <script>
+
+        var selectedAmount = 50; // Default value
+        var selectedQuantity = 1; // Default value
+
+        function updateAmount(amount) {
+            console.log('selectedAmount: $' + selectedAmount); // Debugging log
+    selectedAmount = parseInt(amount); // Update global variable
+    document.getElementById('amount-display').textContent = '$' + selectedAmount;
+    console.log('selectedAmount: $' + selectedAmount); // Debugging log
+}
+
+function changeQuantity(change) {
+
+    var currentAmount = parseInt(document.getElementById('amount-display').textContent.slice(1)); 
+    var newAmount = currentAmount + change;
+    if (newAmount >= 0) {
+        document.getElementById('amount-display').textContent = '$' + newAmount;
+        selectedAmount = parseInt(newAmount); // Update global variable
+        console.log('selectedAmount: $' + selectedAmount); // Debugging log
+    }
+}
+
+function changeQuantityValue(change) {
+    console.log("YESYESYES");
+    var quantityInput = document.getElementById('quantity');
+    var currentValue = parseInt(quantityInput.value);
+    var newValue = currentValue + change;
+    if (newValue >= 1) {
+        quantityInput.value = newValue;
+        selectedQuantity = newValue;
+        console.log('selectedQuantity: ' + selectedQuantity); // Debugging log
+    }
+}
+
+function bindEventListeners() {
+    // Ensure all event listeners on dynamic elements are set up here
+    // This should include buttons for changing amount, quantity, and any other interactive elements
+    document.querySelectorAll('.amount-button').forEach(button => {
+        button.addEventListener('click', function() {
+            updateAmount(this.getAttribute('data-amount'));
+        });
+    });
+    // Additional listeners as required
+}
+
+// Initial event bindings and setup
+document.addEventListener('DOMContentLoaded', function() {
+    // Bindings for static content here
+    document.getElementById('btn-friend').addEventListener('click', function() {
+        document.getElementById('their-name-label').style.display = 'block';
+        document.getElementById('their-name').style.display = 'block';
+        document.getElementById('your-name-label').style.display = 'block';
+        document.getElementById('your-name').style.display = 'block';
+    });
+    document.getElementById('btn-for-me').addEventListener('click', function() {
+        document.getElementById('their-name-label').style.display = 'none';
+        document.getElementById('their-name').style.display = 'none';
+        document.getElementById('your-name-label').style.display = 'none';
+        document.getElementById('your-name').style.display = 'none';
+    });
+});
+        // JavaScript to toggle the display of name fields
+        document.getElementById('btn-friend').addEventListener('click', function() {
+            document.getElementById('their-name-label').style.display = 'block';
+            document.getElementById('their-name').style.display = 'block';
+            document.getElementById('your-name-label').style.display = 'block';
+            document.getElementById('your-name').style.display = 'block';
+        });
+    
+        document.getElementById('btn-for-me').addEventListener('click', function() {
+            document.getElementById('their-name-label').style.display = 'none';
+            document.getElementById('their-name').style.display = 'none';
+            document.getElementById('your-name-label').style.display = 'none';
+            document.getElementById('your-name').style.display = 'none';
+        });
+
+        // JavaScript for updating the dynamic content on button click
+        document.getElementById('pick-card-button').addEventListener('click', function() {
+  
+        var dynamicContent = document.getElementById('dynamic-content');
+        dynamicContent.innerHTML = `
+            <h2 style="color: black; text-align: center; margin-bottom: 2rem;">What kind of gift card do you want?</h2> <!-- Increased margin-bottom -->
+            <div class="card-option" style="text-align: center; margin-bottom: 1.5rem;">
+                <h3 style="margin-bottom: 0.5rem;">Digital Card</h3>
+                <p style="margin-bottom: 1.5rem;">Send a gift card via email.<br>Received immediately or choose the delivery date/time.</p>
+                <button id="digital-card-button" class="btn btn-primary btn-block" style="background-color: #007bff; border: none;">Send A Digital Card</button>
+            </div>
+            <div class="card-option" style="text-align: center; margin-bottom: 1.5rem;">
+                <h3 style="margin-bottom: 0.5rem;">Physical Card</h3>
+                <p style="margin-bottom: 1.5rem;">Send a traditional gift card through the mail.<br>Flexible shipping options available.</p>
+                <button id="physical-card-button" class="btn btn-primary btn-block" style="background-color: #007bff; border: none;">Send A Physical Card</button>
+            </div>
+        `;
+    
+        bindEventListeners();
+
+            // Add event listeners to the new buttons
+            document.getElementById('digital-card-button').addEventListener('click', function() {
+    var dynamicContent = document.getElementById('dynamic-content');
+    dynamicContent.innerHTML = `
+        <h2 style="color: black; text-align: center; margin-bottom: 2rem;">Choose your Gift Card Design</h2>
+        <div style="text-align: center; margin-bottom: 2rem;">
+            <a href="#" style="color: #0d6efd; text-decoration: underline;">Upload Your Own Photo</a>
+        </div>
+        <div style="display: flex; justify-content: center; margin-bottom: 2rem;">
+            <!-- Card Design Options -->
+            <div style="margin-right: 10px;">
+                <img src="images/CinewaveGC.jpg" alt="Card Design 1" style="width: 100px; height: 60px;">
+            </div>
+            <div style="margin-right: 10px;">
+                <img src="images/CinewaveGC.jpg" alt="Card Design 2" style="width: 100px; height: 60px;">
+            </div>
+            <div>
+                <img src="images/CinewaveGC.jpg" alt="Card Design 3" style="width: 100px; height: 60px;">
+            </div>
+        </div>
+        <button id="how-much-button" class="btn btn-primary btn-block">How much?</button>
+    `;
+
+  
+
+    // Here you would add any additional JavaScript for new functionality
+    document.getElementById('how-much-button').addEventListener('click', function() {
+        console.log("yes yes");
+    var dynamicContent = document.getElementById('dynamic-content');
+    dynamicContent.innerHTML = `
+    <div style="text-align: center; margin-bottom: 2rem; padding-bottom: 2rem;">
+        <h2 style="color: black; text-align: center; margin-bottom: 2rem;">How much is it for?</h2>
+    </div>
+    <div class="amount-selector" style="padding-bottom: 2rem; text-align: center;">
+        <button class="minus" onclick="changeQuantity(-1)">-</button>
+        <span class="amount" id="amount-display">$100</span>
+        <button class="plus" onclick="changeQuantity(1)">+</button>
+    </div>
+    <div class="preset-amounts" style="padding-bottom: 2rem; text-align: center;">
+        <button onclick="updateAmount(10)">$10</button>
+        <button onclick="updateAmount(25)">$25</button>
+        <button onclick="updateAmount(50)">$50</button>
+        <button onclick="updateAmount(100)" class="selected">$100</button>
+        <button onclick="updateAmount(150)">$150</button>
+        <button onclick="updateAmount(200)">$200</button>
+    </div>
+    <div class="quantity-selector" style="padding-bottom: 2rem; text-align: center;">
+        <label for="quantity" style="display: block; text-align: center;">Quantity</label>
+        <button class="minus" onclick="changeQuantityValue(-1)">-</button>
+        <input type="number" id="quantity" value="1" min="1" class="quantity-input" style="text-align: center;">
+        <button class="plus" onclick="changeQuantityValue(1)">+</button>
+    </div>
+    <button id="add-message-button" class="btn btn-primary" style="padding: 12px 24px; border-radius: 5px; text-align: center; display: block; margin: 0 auto;">Add a message</button>
+    `;
+  
+
+
+
+    document.getElementById('add-message-button').addEventListener('click', function() {
+    var dynamicContent = document.getElementById('dynamic-content');
+    dynamicContent.innerHTML = `
+        <div style="text-align: center; color: black; margin-bottom: 2rem;">
+            <h2>Add a personalized message</h2>
+            <label for="message-input">Your Message (optional)</label>
+            <textarea id="message-input" class="form-control" rows="4" style="margin-bottom: 1rem; color: black;" maxlength="250" placeholder="Your message here..."></textarea>
+            <span id="char-count" style="color: grey;">0/250</span>
+        </div>
+        <button id="destination-button" class="btn btn-primary btn-block" style="padding: 12px 24px; border-radius: 5px; text-align: center; display: block; margin: 0 auto;">Where is it going?</button>
+
+    `;
+
+    // Listen for input events on the message input to update character count
+    document.getElementById('message-input').addEventListener('input', function() {
+        var messageLength = this.value.length;
+        document.getElementById('char-count').textContent = messageLength + '/250';
+    });
+
+    document.getElementById('destination-button').addEventListener('click', function() {
+    var dynamicContent = document.getElementById('dynamic-content');
+    dynamicContent.innerHTML = `
+        <div style="color: black; margin-bottom: 1rem; text-align: center;">
+            <p>All fields are required, unless they are marked optional.</p>
+            <h2 class="text-center">Where is it going?</h2>
+            <label for="recipient-email">Recipient's email</label>
+            <input type="email" id="recipient-email" class="form-control" placeholder="Recipient's email" required style="margin-bottom: 0.5rem;">
+            <small>Don't have the recipient's email? Enter your own email and share the gift with them later.</small>
+            <input type="email" id="confirm-email" class="form-control" placeholder="Confirm email" required style="margin-top: 1rem;">
+        </div>
+        <div style="color: black; margin-bottom: 1rem; text-align: center;">
+            <h2 class="text-center">When should it be sent?</h2>
+            <label for="delivery-date">Delivery Date (optional)</label>
+            <input type="date" id="delivery-date" class="form-control" placeholder="Choose a date" style="margin-bottom: 1rem;">
+        </div>
+        <button id="add-to-cart-button" class="btn btn-primary btn-block" style="background-color: #007bff; padding: 12px 24px; border-radius: 5px; text-align: center; display: block; margin: 0 auto;">Add to cart</button>
+    `;
+
+    document.getElementById('add-to-cart-button').addEventListener('click', function() {
+    var dynamicContent = document.getElementById('dynamic-content');
+    var subtotal = selectedAmount * selectedQuantity;
+    dynamicContent.innerHTML = `
+        <div style="color: black; text-align: center; margin-bottom: 2rem;">
+            <h2>Review Your Cart</h2>
+            <div class="eGift-card">
+                <h3>eGift Card</h3>
+                <p>For: Recipient<br>youremail@gmail.com</p>
+                <div class="gift-card-image" style="background: url('images/CinewaveGC.jpg') no-repeat center center; background-size: contain; height: 150px;">
+                    <!-- Image styled via CSS -->
+                </div>
+                <p class="gift-card-value">$${selectedAmount}</p>
+                <div>
+                    <a href="#" class="edit-link">Remove</a> |
+                    <a href="#" class="edit-link">View / Edit Details</a>
+                </div>
+                <div class="quantity-selector">
+                    <label>Quantity</label>
+                    <input type="number" value="${selectedQuantity}" min="1">
+                </div>
+            </div>
+            <button id="add-another-card-button" class="btn btn-secondary btn-block">Add Another Card</button>
+        </div>
+        <div class="order-summary" style="background-color: white; padding: 1rem; margin-top: 2rem;">
+            <h3>Order Summary</h3>
+            <p>Currency: USD</p>
+            <p>Card Subtotal (${selectedQuantity}): $${subtotal.toFixed(2)}</p>
+            <p>Order Total: $${subtotal.toFixed(2)}</p>
+            <button id="checkout-button" class="btn btn-primary btn-block" style="padding: 12px 24px; border-radius: 5px; text-align: center; display: block; margin: 0 auto;">Checkout</button>
+        </div>
+        
+    `
+    window.localStorage.setItem('giftCardAmount', selectedAmount.toString());
+    window.localStorage.setItem('giftCardQuantity', selectedQuantity.toString());
+
+    // Redirect to the checkout page
+    window.location.href = 'checkoutGC.html';
+    ;
+
+    // Add event listeners for the "Add Another Card" and "Checkout" buttons
+    document.getElementById('add-another-card-button').addEventListener('click', function() {
+      
+    });
+    document.getElementById('checkout-button').addEventListener('click', function() {
+        //window.location.href = 'checkoutGC.html'
+    });
+
+    
+});
+
+});
+
+
+});
+
+
+});
+
+
+ 
+});
+
+            document.getElementById('physical-card-button').addEventListener('click', function() {
+                // Implement functionality for physical card selection
+                updatePhysicalCardChoice();
+                
+            });
+
+            function updatePhysicalCardChoice() {
+        var dynamicContent = document.getElementById('dynamic-content');
+        dynamicContent.innerHTML = `
+            <h2 style="color: black; text-align: center; margin-bottom: 2rem;">Choose your Gift Card Design</h2>
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <a href="#" style="color: #0d6efd; text-decoration: underline;">Upload Your Own Photo</a>
+            </div>
+            <div style="display: flex; justify-content: center; margin-bottom: 2rem;">
+                <div style="margin-right: 10px;">
+                    <img src="images/CinewaveGC.jpg" alt="Card Design 1" style="width: 100px; height: 60px;">
+                </div>
+                <div style="margin-right: 10px;">
+                    <img src="images/CinewaveGC.jpg" alt="Card Design 2" style="width: 100px; height: 60px;">
+                </div>
+                <div>
+                    <img src="images/CinewaveGC.jpg" alt="Card Design 3" style="width: 100px; height: 60px;">
+                </div>
+            </div>
+            <button id="how-much-button" class="btn btn-primary btn-block">How much?</button>
+        `;
+        document.getElementById('how-much-button').addEventListener('click', updateAmountOptions);
+    }
+
+    function updateAmountOptions() {
+        var dynamicContent = document.getElementById('dynamic-content');
+    dynamicContent.innerHTML = `
+    <div style="text-align: center; margin-bottom: 2rem; padding-bottom: 2rem;">
+        <h2 style="color: black; text-align: center; margin-bottom: 2rem;">How much is it for?</h2>
+    </div>
+    <div class="amount-selector" style="padding-bottom: 2rem; text-align: center;">
+        <button class="minus" onclick="changeQuantity(-1)">-</button>
+        <span class="amount" id="amount-display">$100</span>
+        <button class="plus" onclick="changeQuantity(1)">+</button>
+    </div>
+    <div class="preset-amounts" style="padding-bottom: 2rem; text-align: center;">
+        <button onclick="updateAmount(10)">$10</button>
+        <button onclick="updateAmount(25)">$25</button>
+        <button onclick="updateAmount(50)">$50</button>
+        <button onclick="updateAmount(100)" class="selected">$100</button>
+        <button onclick="updateAmount(150)">$150</button>
+        <button onclick="updateAmount(200)">$200</button>
+    </div>
+    <div class="quantity-selector" style="padding-bottom: 2rem; text-align: center;">
+        <label for="quantity" style="display: block; text-align: center;">Quantity</label>
+        <button class="minus" onclick="changeQuantityValue(-1)">-</button>
+        <input type="number" id="quantity" value="1" min="1" class="quantity-input" style="text-align: center;">
+        <button class="plus" onclick="changeQuantityValue(1)">+</button>
+    </div>
+    <button id="add-message-button" class="btn btn-primary" style="padding: 12px 24px; border-radius: 5px; text-align: center; display: block; margin: 0 auto;">Add a message</button>
+    `;
+        document.getElementById('add-message-button').addEventListener('click', addMessage);
+    }
+
+    function addMessage() {
+        var dynamicContent = document.getElementById('dynamic-content');
+        dynamicContent.innerHTML = `
+            <div style="text-align: center; color: black; margin-bottom: 2rem;">
+                <h2>Add a personalized message</h2>
+                <label for="message-input">Your Message (optional)</label>
+                <textarea id="message-input" class="form-control" rows="4" style="margin-bottom: 1rem; color: black;" maxlength="250" placeholder="Your message here..."></textarea>
+                <span id="char-count" style="color: grey;">0/250</span>
+            </div>
+            <button id="enter-shipping-details-button" class="btn btn-primary btn-block">Enter Shipping Details</button>
+        `;
+        document.getElementById('enter-shipping-details-button').addEventListener('click', enterShippingDetails);
+    }
+
+    function enterShippingDetails() {
+        var dynamicContent = document.getElementById('dynamic-content');
+        dynamicContent.innerHTML = `
+            <h2 style="color: black; text-align: center; margin-bottom: 2rem;">Shipping Details</h2>
+            <form id="shipping-form">
+                <input type="text" id="full-name" class="form-control" placeholder="Full Name" required style="margin-bottom: 1rem;">
+                <input type="text" id="country" class="form-control" placeholder="Country" required style="margin-bottom: 1rem;">
+                <input type="text" id="street-address" class="form-control" placeholder="Street Address" required style="margin-bottom: 1rem;">
+                <input type="text" id="city" class="form-control" placeholder="City" required style="margin-bottom: 1rem;">
+                <input type="text" id="state" class="form-control" placeholder="State" required style="margin-bottom: 1rem;">
+                <input type="text" id="postal-code" class="form-control" placeholder="Postal Code" required style="margin-bottom: 1rem;">
+                <button type="submit" class="btn btn-primary btn-block">Proceed to Checkout</button>
+            </form>
+        `;
+        document.getElementById('shipping-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            redirectToCheckout();
+        });
+    }
+
+    function redirectToCheckout() {
+        
+        console.log("Redirecting to checkout...");
+        localStorage.setItem('giftCardAmount', selectedAmount.toString());
+        localStorage.setItem('giftCardQuantity', selectedQuantity.toString());
+        window.location.href = 'checkoutGC.html';
+    }
+});
+
+        
+    </script>
+
+    <script src="navbar.bundle.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

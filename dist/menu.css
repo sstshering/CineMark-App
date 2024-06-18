@@ -1,0 +1,228 @@
+/* menu.css */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+/* Reset and Defaults */
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    background: #0d0e27;
+    color: #FFFFFF; 
+} 
+
+/* Hero Section */
+.hero-section {
+    background-image: url('./menu/test.jpg'); /* Ensure this path is correct */
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    position: relative;
+    color: #ffffff;
+}
+
+/* Overlay for better text readability */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+/* Positioning the text over the image at the bottom left */
+.hero-content {
+    position: absolute;
+    bottom: 20px;
+    left: 100px;
+    right: 40px;
+    z-index: 2;
+    text-align: left;
+    max-width: calc(100% - 140px);
+}
+
+.hero-content h2 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+}
+
+.hero-content p {
+    font-size: 1.2em;
+    margin-bottom: 1em;
+}
+
+.btn-primary {
+    background-color: #E50914;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #B20710;
+}
+ 
+/* Menu Container */
+.interactive-menu-container {
+    width: auto; /* Adjust width as needed */
+    /*margin: 40px auto; /* More vertical space */
+    margin-left: 3%; /* Adjust this as necessary */
+    border-radius: 8px; /* Rounded corners for modern look */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Soft shadow for depth */
+    background: #0d0e27; /* White background for the dropdown */
+    overflow: hidden; /* Hide overflow for clean rounded corners */
+}
+ 
+/* Interactive Menu Items - Uniform Color */
+.interactive-menu-item {
+    background-image: linear-gradient(to right, #2c7bb0 , rgb(0, 0, 0) 85%);
+    /*background-color: #3498db; /* Cool blue for all menu items */
+    overflow: hidden;
+    color: #ffffffd0;
+    /*padding: 10px 20px; /* Adjust padding as needed */
+    cursor: pointer;
+    /*display: block; /* Keep items stacked vertically */
+    /*margin: 10px 0; /* Maintain vertical space between items */
+    margin-top: 15px;
+    margin-bottom: 0px;
+    border-radius: 4px; /* Slightly rounded edges for menu items */
+    /*text-align: left; /* Center the text inside the button */
+    /*box-sizing: border-box; /* Include padding in the width calculation */
+    width: 70%; /* Set a fixed width to accommodate the longest item */
+    height: 75px;
+}
+
+.interactive-menu-item:hover {
+    background-color: #2980b9; /* Slightly darker blue on hover for interactivity */
+}
+
+
+/* Dropdown Content */
+.dropdown-content {
+    height: 0px;
+    overflow: hidden;
+    transition: all .5s ease;
+    background-color: #fffffffa;
+    column-count: 3;
+    column-rule: 2px double #ddd;
+    width: 70%; /* Set a fixed width to match the menu items */
+}
+
+/* Size Options within the Dropdown */
+.size-option {
+    display: inline-block; /* Use flex layout */
+    width: 100%;
+    justify-content: space-between; /* Space between label and controls */
+    padding: 10px 0; /* Vertical padding for better readability */
+}
+
+.size-option:hover {
+    background-color: #eceff1; /* Light background on hover for feedback */
+}
+
+.size-option:last-child {
+    border-bottom: none; /* Remove border for the last option */
+}
+
+/* Enhanced Responsiveness for New Menu Structure */
+@media screen and (max-width: 768px) {
+    .interactive-menu-container {
+        margin: 20px; /* Adjust margins for smaller screens */
+    }
+
+    .interactive-menu-item, .dropdown-content {
+        padding: 12px 15px; /* Adjust padding for better spacing */
+    }
+}
+
+/* Style for the quantity buttons and number display */
+.quantity-btn, .size-option span {
+    border-radius: 50%; /* Round shape */
+    padding: 5px 10px;
+    text-align: center;
+    min-width: 20px; /* Ensures the circle shape even if the number is single digit */
+}
+
+/* Style for the quantity buttons specifically */
+.quantity-btn {
+    border: none;
+    background-color: #333; /* Dark background for contrast */
+    color: #fff;
+    margin: 0 5px;
+    cursor: pointer;
+    font-size: 1rem; /* Adjustable based on your design preference */
+}
+
+/* Quantity Controls container */
+.quantity-controls {
+    display: flex; /* Use flexbox layout */
+    justify-content: flex-end; /* Aligns the buttons to the right */
+    align-items: center; /* Vertically centers the buttons */
+}
+
+/* Style to make the quantity number look like a button */
+.size-option span {
+    display: inline-block;
+    background-color: #eee; /* Light background */
+    color: #333;
+    margin: 0 5px; /* Space around the quantity display */
+}
+
+/* Category Items */
+.menu-items {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    gap: 0;
+} 
+
+.category {
+    display: flex;
+    flex-direction: row; /* Align items in a row */
+    background-color: #0d0e27;
+    overflow: hidden;
+    margin: 0; /* Remove default margins */
+    padding: 0; /* Remove default paddings */
+}
+
+.category img {
+    width: 50%; /* Half width */
+    height: 400px; /* Set a fixed height for all images */
+    object-fit: cover; /* Cover the area, preserving aspect ratio without stretching */
+}
+
+.category .description {
+    width: 50%; /* Half width */
+    padding: 20px; /* Padding around the text */
+    text-align: left; /* Align text to the left */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically center the text */
+    color: #FFFFFF; /* Text color white */
+}
+
+/* Responsiveness */
+@media screen and (max-width: 768px) {
+    .hero-content {
+        left: 20px;
+        bottom: 20px;
+        max-width: calc(100% - 40px);
+    }
+
+    .category {
+        flex-direction: column;
+    }
+
+    .category img, .category .description {
+        width: 100%; /* Full width for smaller screens */
+        height: auto; /* Height auto to maintain aspect ratio */
+    }
+
+    .category .description {
+        padding: 20px; /* Maintain padding for readability on smaller screens */
+    }
+}

@@ -1,0 +1,236 @@
+/* Gift Card Section */
+.gift-card-section {
+    background-color: #000; /* Black background color */
+    color: #fff; /* White text color */
+    padding: 20px;
+    text-align: center;
+}
+
+.gift-card-section h2 {
+    margin-bottom: 0.5rem;
+    font-size: 2rem; /* Adjust the size as needed */
+}
+
+.gift-card-section p {
+    margin-bottom: 1rem;
+    font-size: 1rem; /* Adjust the size as needed */
+}
+
+/* Button styling if not using Bootstrap's .btn class */
+.btn-warning {
+    background-color: #007bff; /* Specific orange color */
+    color: black; /* Text color */
+    border: none;
+    border-radius: 0.25rem;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: inline-block; /* Change from block to inline-block */
+    margin: 20px 0;
+}
+
+/* Balance Check Section */
+.balance-check-section {
+    background-color: #0d0e27; /* Dark blue background color */
+    color: white !important; /* Force white text color */
+    text-align: center;
+    padding: 200px 0; /* Increase top padding to move content lower */
+}
+
+.balance-check-section .container {
+    max-width: 600px;
+    margin-left: 10%;
+    margin: auto;
+    padding: 15px;
+}
+
+.balance-check-section h2 {
+    margin-bottom: 2rem;
+}
+
+.balance-check-section p {
+    margin-bottom: 1.5rem;
+}
+
+.balance-check-section .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.balance-check-section label {
+    display: block;
+    text-align: left;
+    margin-bottom: .5rem;
+}
+
+.balance-check-section input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 1rem;
+    background: transparent;
+    border: 1px solid white;
+    border-radius: 0;
+    color: white !important; 
+}
+
+.balance-check-section button.btn {
+    background-color: #ffffff; 
+    color: #0d0e27; 
+    border: none;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.balance-check-section button.btn:hover {
+    background-color: #f2f2f2; 
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    .balance-check-section .container {
+        width: 90%;
+    }
+}
+
+/* Adjustments to the gift card form */
+.gift-card-form {
+    background: #FFFFFF; /* White background */
+    max-width: 300px; /* Adjust this value to fit your design */
+    margin: 40px auto; /* Vertical and horizontal centering */
+    padding: 20px; /* Adjust padding to fit content */
+    border-radius: 5px; /* Slight rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    display: block; /* Supports auto margins */
+    /* Add these lines to restrict height */
+    height: 300px; /* Adjust this value to fit your design */
+    overflow: auto; /* Adds scroll if content is larger than the box */
+}
+
+.gift-card-form h2 {
+    color: #000000; /* Black text */
+    margin-bottom: 25px;
+}
+
+.gift-card-form .btn-group {
+    margin-bottom: 20px;
+}
+
+.gift-card-form .btn {
+    color: #b0b0b0; /* Red text */
+    background-color: transparent;
+    border-color: #FF0000; /* Red border */
+}
+
+.gift-card-form .btn.active,
+.gift-card-form .btn:hover {
+    color: #FFFFFF; /* White text */
+    background-color: #780000; /* Red background */
+}
+
+.gift-card-form .form-control {
+    margin-bottom: 20px;
+    border-radius: 0; /* No rounded corners on inputs */
+}
+
+.gift-card-form .btn-block {
+    background-color: #ffffff; /* Red background */
+    color: #FFFFFF; /* White text */
+    border: none;
+    margin-top: 20px;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 576px) {
+    .gift-card-form {
+        padding: 15px; /* Less padding on smaller screens */
+        max-width: 80%; /* Take up more width on smaller screens */
+    }
+}
+
+.card-selection {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.card-option {
+    text-align: center;
+    margin-bottom: 1.5rem; 
+    width: 48%; /* Adjust width as necessary for your layout */
+}
+
+.card-divider {
+    width: 4%;
+    /* Additional styling for divider if needed */
+}
+
+.amount-section {
+    color: white;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.amount-title {
+    margin-bottom: 1rem;
+}
+
+.amount-options {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.amount-button {
+    background: transparent;
+    text-align: center;
+    border: 1px solid white;
+    color: white;
+    padding: 0.5rem 1rem;
+    margin: 0 0.25rem;
+    cursor: pointer;
+}
+
+.amount-button.selected {
+    background: white;
+    color: #000;
+}
+
+.quantity-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.quantity-controller {
+    display: flex;
+    border: 1px solid white;
+    color: white;
+}
+
+.quantity-minus, .quantity-plus {
+    background: transparent;
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+.quantity-display {
+    background: #000;
+    color: white;
+    padding: 0.5rem;
+    width: 3rem;
+    text-align: center;
+    border: none;
+}
+
+.message-button {
+    background-color: red; 
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}

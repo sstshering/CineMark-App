@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+        Cinewave
+    </title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+
+<body class="body">
+    <div id="navbarContainer"></div>
+    <div id = "bannerContainer"></div>
+
+<body>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-interval="5000">
+                    <img class="d-block w-100" src="https://firebasestorage.googleapis.com/v0/b/team-1-b5d5c.appspot.com/o/movies%2F1712027310516-anyoneButYouLong.jpeg?alt=media&token=32437282-f029-4bc7-8449-84c9a119b15b" alt="First slide">
+                </div>
+                <div class="carousel-item" data-interval="5000">
+                    <img class="d-block w-100" src="https://firebasestorage.googleapis.com/v0/b/team-1-b5d5c.appspot.com/o/movies%2F1712027378625-dune2Long.jpeg?alt=media&token=353a9419-9a72-4954-9f86-f6b70b8bc43d" alt="Second slide">
+                </div>
+                <div class="carousel-item" data-interval="5000">
+                    <img class="d-block w-100" src="https://firebasestorage.googleapis.com/v0/b/team-1-b5d5c.appspot.com/o/movies%2F1712027561694-kungfupanda4long.jpeg?alt=media&token=3d7b60cf-20d2-427b-a480-863a8d9508a6" alt="Third slide">
+                </div>
+            </div>
+
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+        <br>
+    </div>  
+
+    <!-- complete movie list -->
+    <div class="section">
+        <div class="section-title" style="margin-top: 0px; transform: skew(-20deg);"> </div>
+        <div class="section-title" style="color: #fff; transform: skew(20deg); margin-top: -80px;">
+            <div style="transform: skew(-20deg); text-shadow: 2px 2px #0d0e27;">Movies</div>
+        </div>
+
+        <!-- filter by buttons -->
+        <div class="section">
+            <div class="btn-group" style="margin-left: 2%;">
+                <button id="genreBtn" type="button" class="btn btn-outline-light dropdown-toggle" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-filter"
+                        viewBox="0 0 16 16">
+                        <path
+                            d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5" />
+                    </svg>
+                    Genre
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a id="animeFilter" class="dropdown-item" href="#">Anime</a>
+                    <a id="actionFilter" class="dropdown-item" href="#">Action</a>
+                    <a id="comedyFilter" class="dropdown-item" href="#">Comedy</a>
+                    <a id="horrorFilter" class="dropdown-item" href="#">Horror</a>
+                    <a id="musicalFilter" class="dropdown-item" href="#">Musical</a>
+                    <a id="romanceFilter"  class="dropdown-item" href="#">Romance</a>
+                    <a id="allMoviesFilter" class="dropdown-item" href="#">All genres</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="moviesCardDeckContainer"></div>
+
+        <div class="footer" style="margin-top: 5%;">&copy Cinewave 2024<br>
+            All rights reserved to The University of Texas at EL Paso<br>
+            and team 'UnoChi' as part of the CS 5381 Topics in Software Engineering course</div>
+    </div>
+
+</body>
+
+<script src="navbar.bundle.js"></script>
+<script src="banner.bundle.js"></script>
+<script src="index.bundle.js"></script>
+<script src="auth.bundle.js"></script>
+<script src="mngr_index.bundle.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <style>
+    #movies-table th {
+      vertical-align: top;
+    }
+
+    #movies-table thead {
+  background-color: #C5C6D0;
+}
+  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <div id="navbarContainer"></div>
+
+  <table id="movies-table" class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID
+          <div>
+            <input type="text" id="id-filter" placeholder="Filter by ID">
+
+          </div>
+        </th>       
+        <th scope="col">Name</th>
+        <th scope="col">Rating</th>
+        <th scope="col">Genre</th>
+        <th scope="col">Runtime</th>
+        <th scope="col">Date</th>
+        <th scope="col">Time</th>
+        <th scope="col">Revenue</th>
+      </tr>
+    </thead>
+  </table>
+</body>
+<script src="navbar.bundle.js"></script>
+<script src="manager.bundle.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+
+</html>

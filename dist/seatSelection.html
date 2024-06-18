@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinema Experience</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="seats.css">
+    <link rel="stylesheet" href="menu.css">
+   
+</head> 
+<body style='background-image: linear-gradient(#121342 , #050115 90%);'>
+    <div id="navbarContainer">
+    </div> 
+
+    <!-- Seat Selection Section -->
+    <div class="curved-line" style="background-color: white; width: 68%; margin-left: 3%; margin-right: auto;"></div>
+    <div class="screen-text" style="position: relative; margin-left: 2%;">SCREEN</div>
+
+    <div id="seatSelect"></div> 
+
+    <!-- Movie Theater Menu Section -->
+    <div class="interactive-menu-container" id="menuContainer"></div>
+
+    <!-- Floating recipt anchor -->
+    <div id="receipt"></div>
+
+    <div class="footer" style="margin-top: 5%;">&copy Cinewave 2024<br>
+        All rights reserved to The University of Texas at EL Paso<br>
+        and team 'UnoChi' as part of the CS 5381 Topics in Software Engineering course</div>
+
+    <script src="navbar.bundle.js"></script> <!-- Script to dynamically load the navbar -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+<script src="seats.bundle.js"></script>
+</html>
+ 

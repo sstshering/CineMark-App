@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Gift Card Balance</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="giftCards.css"> 
+    <style> 
+        body, html {
+            height: 100%; 
+            margin: 0;
+            background-color: #0d0e27;
+            color: white;
+        }
+        .full-height {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .balance-message {
+            margin-top: 20px; 
+            font-size: 1.25rem;
+            text-align: center;
+            color: #00FF00; /* Green color for successful messages */
+        }
+    </style>
+</head>
+<body style="background-color: #0d0e27;"></body>
+    <div id="navbarContainer">
+        <!-- Navigation bar content -->
+    </div>
+
+   
+    <!-- Balance Check Section -->
+    <div class="balance-check-section" style="color: white; padding-top: 100px; background-color: #0d0e27;">
+        <div class="container" style="max-width: 600px; margin-left: 5%; padding: 15px;">
+            <h2 style="font-size: 3rem;">Check Gift Card Balance</h2>
+            <p style="font-size: 1.25rem;">Enter your gift card number and PIN below.</p>
+            <form id="balanceCheckForm">
+                <div class="form-group">
+                    <label for="giftCardNumber">Gift Card Number</label>
+                    <input type="text" id="giftCardNumber" required 
+                           style="color: white; background: transparent; border: none; 
+                                  border-bottom: 1px solid white; width: 100%; margin-bottom: 20px;"
+                           pattern="\d{16}" title="Gift card number must be 16 digits" 
+                           maxlength="16">
+                </div>   
+                <div class="form-group">
+                    <label for="giftCardPin">Gift Card PIN</label>
+                    <input type="password" id="giftCardPin" required 
+                           style="color: white; background: transparent; border: none; 
+                                  border-bottom: 1px solid white; width: 100%; margin-bottom: 20px;"
+                           pattern="\d{4}" title="PIN must be 4 digits" 
+                           maxlength="4">
+                </div>
+                <div style="text-align: right; width: 100%;">
+                    <button type="submit" class="btn" 
+                            style="color: #0d0e27; background-color: white; border: none; 
+                                   padding: 10px 20px; border-radius: 20px; text-transform: uppercase;">Search</button>
+                </div>
+            </form>
+            <div id="balanceMessage" class="balance-message"></div>
+        </div>
+    </div>
+
+    <script type="module" src="checkBalance.bundle.js"></script>
+
+    <script src="navbar.bundle.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

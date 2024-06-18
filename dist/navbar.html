@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navigation Bar</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #fdfdfd;">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+      aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <a class="navbar-brand" href="index.html"> <img src="images/Logo.jpg" alt="CinéMark Logo" style="width:60px;">
+      </a>
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">About</a>
+        </li> 
+        <li class="nav-item">
+          <a class="nav-link" href="membership.html">Membership</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="menu.html">Food & Drinks</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="gifCards.html">Gift Cards</a>
+        </li>
+      </ul>
+
+      <div class="btn-group" id="userAccountDropdown">
+        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+          User Account
+        </button>
+        <div class="dropdown-menu dropdown-menu-right">
+          <a id="createAccountBtn" href="createAccount.html" class="dropdown-item">Create Account</a>
+          <a id="signInBtn" href="signIn.html" class="dropdown-item">Sign In</a>
+          <a id="viewProfileBtn" href="viewProfile.html" class="dropdown-item">View Profile</a>
+          <a id="managerButton" href="mngr_index.html" class="dropdown-item">Manager</a>
+          <a id="signOutBtn" onclick="signOutonClick()" class="dropdown-item">Sign Out</a>
+          <!-- <a id="signOutBtn" class="dropdown-item">Sign Out</a> -->
+          
+        </div>
+      </div>
+    </div>
+  </nav>
+
+</body>
+<script src="auth.bundle.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
+</html>

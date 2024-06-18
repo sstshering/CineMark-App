@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>View Profile</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="movieSelect.css">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
+</head>
+
+<body>
+  <div id="navbarContainer"></div>
+
+  <nav style="padding-top: 20px" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <!-- <h3 style="color: black;">User Profile</h3> -->
+      <li class="breadcrumb-item active" aria-current="page" style="color: black; background-color: rgb(234, 234, 234);">User Profile</li>
+    </ol>
+  </nav>
+
+  <div class="row pl-5" style="padding-top: 25px;">
+    <div class="card">
+      <div class="card-body" style="background-color:rgba(11, 70, 101, 0.577); color: white;">
+        <h5 class="card-title">Your Account</h5>
+        <p id="accEmail" class="card-text"><b>Email: </b></p>
+        <p id="accMembership" class="card-text">
+          <b>Membership type:</b>
+          <span id="membershipType"><!-- hold the membership type --></span>
+          <button class="btn btn-sm btn-primary ml-auto pen-button" data-toggle="modal" data-target="#changeMembershipModal">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pen" viewBox="0 0 16 16">
+                  <path d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001m-.644.766a.5.5 0 0 0-.707 0L1.95 11.756l-.764 3.057 3.057-.764L14.44 3.854a.5.5 0 0 0 0-.708z"/>
+              </svg>
+          </button>
+        </p>
+        <p id="accPoints" class="card-text"><b>Accumulated points: </b></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="showtimeDate" style="margin-left: -2%; padding-top: 50px; background-color: #2c7bb0;">
+    <h3 style="margin-top: -45px; color: white;">Saved Tickets</h3>
+  </div>
+
+  <div id="ticketsContainer" style="padding-top: 50px;"></div>
+
+  <div class="showtimeDate" style="margin-left: -2%; padding-top: 50px; background-color: #2c7bb0;">
+    <h3 style="margin-top: -45px; color: white;">Payment Options</h3>
+  </div>
+
+  <div id="cardsContainer" style="padding-top: 25px"></div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="changeMembershipModal" tabindex="-1" role="dialog" aria-labelledby="changeMembershipModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content" style="background-color:rgba(132, 187, 217, 0.5); color: white;">
+        <div class="modal-header">
+          <h5 class="modal-title" id="changeMembershipModalLabel">Change Membership</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Please select your new membership type:</p>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="membershipType" id="ppMembership" value="Popcorn Pass">
+            <label class="form-check-label" for="ppMembership">
+              Popcorn Pass (Free)
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="membershipType" id="ssMembership" value="Silver Screen">
+            <label class="form-check-label" for="ssMembership">
+              Silver Screen : $15.99
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="membershipType" id="bbMembership" value="Blockbuster VIP">
+            <label class="form-check-label" for="bbMembership">
+              Blockbuster VIP: $29.99
+            </label>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" style="background-color:blue; border-color:blue;" onclick="changeOnClick()" id="confirmMembershipChange">Change</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+<script src="navbar.bundle.js"></script>
+<script src="viewProfile.bundle.js"></script>
+<script src="auth.bundle.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+
+</html>
